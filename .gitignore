@@ -1,0 +1,5 @@
+# Metadata
+.DS_Store
+# Data
+users.json
+assets/**
