@@ -22,7 +22,7 @@ export const options = {
 export default () => {
   group("Sing in page and submit", () => {
     const { username, password } = factory.get_random(USERS);
-    const response = brandkit.sing_in(__ENV.HOSTNAME, username, password);
+    const response = brandkit.sing_in(__ENV.HOST, username, password);
     sleep(1);
 
     check(response, {
@@ -33,7 +33,7 @@ export default () => {
   });
 
   group("List Assets Page", () => {
-    const response = brandkit.visit_list_asset_page(__ENV.HOSTNAME);
+    const response = brandkit.visit_list_asset_page(__ENV.HOST);
     sleep(1);
 
     check(response, {

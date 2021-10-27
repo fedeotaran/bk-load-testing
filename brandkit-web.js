@@ -18,6 +18,10 @@ export const visit_list_asset_page = (host) => {
   return http.get(`https://${host}/admin/assets`);
 };
 
+export const visit_public_list_asset_page = (host) => {
+  return http.get(`https://${host}/assets`);
+};
+
 export const visit_asset_page = (host) => {
   return http.get(`https://${host}/admin/assets/new`);
 };

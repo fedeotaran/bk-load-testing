@@ -21,7 +21,7 @@ export const options = {
 export function uploads() {
   group("Sing in page and submit", () => {
     const { username, password } = factory.get_random(USERS);
-    const response = brandkit.sing_in(__ENV.HOSTNAME, username, password);
+    const response = brandkit.sing_in(__ENV.HOST, username, password);
     sleep(1);
 
     check(response, {
@@ -32,7 +32,7 @@ export function uploads() {
   });
 
   group("New Assets Page", () => {
-    const response = brandkit.visit_asset_page(__ENV.HOSTNAME);
+    const response = brandkit.visit_asset_page(__ENV.HOST);
     sleep(1);
 
     check(response, {
@@ -43,7 +43,7 @@ export function uploads() {
   });
 
   group("Upload Assets Page and submit", () => {
-    const response = brandkit.upload_asset(__ENV.HOSTNAME, FILES);
+    const response = brandkit.upload_asset(__ENV.HOST, FILES);
     sleep(10);
 
     check(response, { "is status 200": (r) => r.status === 200 });
